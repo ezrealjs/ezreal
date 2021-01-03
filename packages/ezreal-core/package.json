@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0-beta.8",
+  "version": "0.3.0-beta.9",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -36,10 +36,18 @@
     "typescript": "^4.1.2"
   },
   "dependencies": {
-    "ezreal-utils": "^0.3.0-beta.8",
+    "ezreal-utils": "^0.3.0-beta.9",
     "webpack-chain": "^6.5.1"
   },
   "gitHead": "5f83ac363b23bfd650a853411c5fc76ab7f07780",
-  "keywords": ["webpack", "webpack-chain", "cli", "neutrino", "chain", "react-scripts", "vue-cli"],
+  "keywords": [
+    "webpack",
+    "webpack-chain",
+    "cli",
+    "neutrino",
+    "chain",
+    "react-scripts",
+    "vue-cli"
+  ],
   "description": "To better help you build webpackConfig"
 }
