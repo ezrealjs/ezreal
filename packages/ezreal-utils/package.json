@@ -38,5 +38,6 @@
     "dependencies": {
         "debug": "^4.3.1",
         "react-dev-utils": "^11.0.1"
-    }
+    },
+    "gitHead": "32804304d2d41766262c4e966553f9542a15acfb"
 }

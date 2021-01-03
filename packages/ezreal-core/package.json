@@ -37,5 +37,6 @@
   },
   "dependencies": {
     "webpack-chain": "^6.5.1"
-  }
+  },
+  "gitHead": "32804304d2d41766262c4e966553f9542a15acfb"
 }
