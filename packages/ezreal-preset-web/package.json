@@ -65,5 +65,7 @@
   "peerDependencies": {
     "webpack": "^5.11.1"
   },
-  "gitHead": "5227dbb52ece42e014cd1b501c67ff86696913f6"
+  "gitHead": "5227dbb52ece42e014cd1b501c67ff86696913f6",
+  "keywords": ["webpack", "webpack-chain", "cli", "neutrino", "chain", "react-scripts", "vue-cli"],
+  "description": "To better help you build webpackConfig"
 }
