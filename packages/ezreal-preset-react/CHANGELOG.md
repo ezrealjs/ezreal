@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-beta.7](https://github.com/ezrealjs/ezreal/compare/v0.3.0-beta.6...v0.3.0-beta.7) (2021-01-03)
+
+
+### Features
+
+* update ([15d4918](https://github.com/ezrealjs/ezreal/commit/15d4918a112a49d8329a7befa4b824358506a62c))
+
+
+
+
+
 # [0.3.0-beta.6](https://github.com/ezrealjs/ezreal/compare/v0.3.0-beta.5...v0.3.0-beta.6) (2021-01-03)
 
 
