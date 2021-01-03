@@ -1,4 +1,4 @@
 module.exports = {
-  extends: "@ezreal/preset-react",
+  extends: require.resolve("ezreal-preset-react"),
   appHtml: 'index.html'
 };

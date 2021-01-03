@@ -5,7 +5,7 @@
     "lerna": "^3.22.1"
   },
   "scripts": {
-    "lerna:publish": "yarn lerna version --conventional-commits  --conventional-prerelease --force-publish=*  --yes && yarn lerna publish --canary --yes",
+    "lerna:publish": "yarn lerna version --conventional-commits  --conventional-prerelease --force-publish=*  --yes --push && yarn lerna publish --canary --yes --push",
     "build": "lerna run build",
     "postinstall": "lerna bootstrap",
     "version:prerelease": "lerna version --conventional-commits --conventional-prerelease --yes --force-publish --no-push",

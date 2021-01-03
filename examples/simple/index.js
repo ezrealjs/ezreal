@@ -4,7 +4,7 @@ import './index.scss'
 
 export default function App() {
     return <div>
-        Hello Ezreal App ~
+      🚀🚀🚀  Hello Ezreal App ~ 🚀🚀🚀
     </div>
 }
 
