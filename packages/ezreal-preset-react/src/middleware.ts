@@ -1,6 +1,6 @@
 import webpack from 'webpack';
-import { isDev, isProd } from '@ezreal/utils';
-import { IEzrealMiddleware } from '@ezreal/core/lib/interface';
+import { isDev, isProd } from 'ezreal-utils';
+import { IEzrealMiddleware } from 'ezreal-core/lib/interface';
 import { IEzrealReactOptions } from './interface';
 
 const react: IEzrealMiddleware = (chain, options: IEzrealReactOptions) => {

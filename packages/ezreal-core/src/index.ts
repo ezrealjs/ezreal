@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { Configuration } from 'webpack';
-import { resolveApp, debug, isDev, isProd } from '@ezreal/utils';
+import { resolveApp, debug, isDev, isProd } from 'ezreal-utils';
 import Preset from './Preset';
 import { compose } from './compose';
 import { precursors, terminator } from './middleware';

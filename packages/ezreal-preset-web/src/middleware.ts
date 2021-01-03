@@ -10,7 +10,7 @@ import {
   cssModuleRegex,
   sassRegex,
   sassModuleRegex,
-} from '@ezreal/utils';
+} from 'ezreal-utils';
 import webpack from 'webpack';
 // @ts-ignore
 import getCacheIdentifier from 'react-dev-utils/getCacheIdentifier';
@@ -25,7 +25,7 @@ import safePostCssParser from 'postcss-safe-parser';
 // @ts-ignore
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import { IEzrealWebOptions } from './interface';
-import { IEzrealMiddleware } from '@ezreal/core/lib/interface';
+import { IEzrealMiddleware } from 'ezreal-core/lib/interface';
 
 const web: IEzrealMiddleware = (chain, options: IEzrealWebOptions) => {
   const { appEntry, appBuild, sourceMap, env } = options;

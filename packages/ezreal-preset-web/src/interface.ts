@@ -1,4 +1,4 @@
-import { IEzrealBaseOptions } from '@ezreal/core'
+import { IEzrealBaseOptions } from 'ezreal-core'
 
 export type IEzrealEnv = 'development' | 'production'
 

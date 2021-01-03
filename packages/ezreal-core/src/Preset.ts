@@ -1,5 +1,5 @@
 import path from 'path';
-import { importDefault } from '@ezreal/utils';
+import { importDefault } from 'ezreal-utils';
 import {
   IEzrealMiddleware,
   IEzrealBaseOptions,

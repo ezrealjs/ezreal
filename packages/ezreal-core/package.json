@@ -27,7 +27,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@ezreal/core",
+  "name": "ezreal-core",
   "author": "xiaoxiaojx",
   "devDependencies": {
     "husky": "^4.3.0",

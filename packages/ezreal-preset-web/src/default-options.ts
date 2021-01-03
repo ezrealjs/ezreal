@@ -1,4 +1,4 @@
-import { findEntry, resolveApp } from '@ezreal/utils';
+import { findEntry, resolveApp } from 'ezreal-utils';
 import { IEzrealWebOptions, IEzrealEnv } from './interface';
 
 export const defaultOptions: IEzrealWebOptions = {

@@ -27,7 +27,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@ezreal/preset-web",
+  "name": "ezreal-preset-web",
   "author": "xiaoxiaojx",
   "devDependencies": {
     "husky": "^4.3.0",
@@ -37,7 +37,6 @@
     "webpack": "^5.11.1"
   },
   "dependencies": {
-    "@ezreal/utils": "^0.3.0-beta.2",
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "8.1.0",
     "babel-plugin-named-asset-import": "^0.3.7",
