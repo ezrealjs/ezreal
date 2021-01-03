@@ -1,0 +1,29 @@
+{
+  "include": ["src", "types"],
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["dom", "esnext"],
+    "importHelpers": true,
+    "declaration": true,
+    "sourceMap": false,
+    "rootDir": "./src",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["src/*", "node_modules/*"]
+    },
+    "jsx": "react",
+    "esModuleInterop": true,
+    "outDir": "lib",
+    "skipLibCheck": true
+  },
+  "types": [
+    "node"
+  ],
+  "exclude": ["dist", "lib"]
+}

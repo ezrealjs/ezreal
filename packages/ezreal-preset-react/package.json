@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx start",
+    "build": "tsc",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsc"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@ezreal/preset-react",
+  "author": "xiaoxiaojx",
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "@ezreal/utils": "0.1.0",
+    "html-webpack-plugin": "^4.5.0",
+    "react-dev-utils": "^11.0.1",
+    "babel-preset-react-app": "^10.0.0"
+  }
+}

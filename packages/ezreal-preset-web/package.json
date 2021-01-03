@@ -1,0 +1,69 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx start",
+    "build": "tsc",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@ezreal/preset-web",
+  "author": "xiaoxiaojx",
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.1.2",
+    "webpack": "^5.11.1"
+  },
+  "dependencies": {
+    "@ezreal/utils": "0.1.0",
+    "@svgr/webpack": "^5.5.0",
+    "babel-loader": "8.1.0",
+    "babel-plugin-named-asset-import": "^0.3.7",
+    "case-sensitive-paths-webpack-plugin": "^2.3.0",
+    "chalk": "2.4.2",
+    "css-loader": "0.28.7",
+    "dart-sass": "^1.25.0",
+    "file-loader": "6.1.1",
+    "mini-css-extract-plugin": "0.11.3",
+    "optimize-css-assets-webpack-plugin": "5.0.4",
+    "pnp-webpack-plugin": "^1.6.4",
+    "postcss-flexbugs-fixes": "4.2.1",
+    "postcss-loader": "3.0.0",
+    "postcss-normalize": "8.0.1",
+    "postcss-preset-env": "6.7.0",
+    "postcss-safe-parser": "5.0.2",
+    "react-dev-utils": "^11.0.1",
+    "resolve-url-loader": "^3.1.2",
+    "sass-loader": "8.0.2",
+    "style-loader": "1.3.0",
+    "terser-webpack-plugin": "4.2.3",
+    "url-loader": "4.1.1",
+    "webpack-manifest-plugin": "^3.0.0"
+  },
+  "peerDependencies": {
+    "webpack": "^5.11.1"
+  }
+}

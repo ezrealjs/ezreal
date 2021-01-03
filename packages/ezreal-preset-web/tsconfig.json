@@ -1,0 +1,30 @@
+{
+  "include": ["src", "types"],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "module": "commonjs",
+    "lib": ["dom", "esnext"],
+    "importHelpers": true,
+    "declaration": true,
+    "sourceMap": false,
+    "rootDir": "./src",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["src/*", "node_modules/*"]
+    },
+    "jsx": "react",
+    "esModuleInterop": true,
+    "outDir": "lib",
+  },
+  "types": [
+    "node",
+    "@ezreal/core"
+  ],
+  "exclude": ["dist", "lib"]
+}

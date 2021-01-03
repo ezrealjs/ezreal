@@ -1,0 +1,18 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "build": "lerna run build",
+    "postinstall": "lerna bootstrap",
+    "version:prerelease": "lerna version --conventional-commits --conventional-prerelease --yes --force-publish --no-push",
+    "version:graduate": "lerna version --conventional-commits --conventional-graduate --yes --force-publish --no-push",
+    "version:release": "lerna version --conventional-commits --yes --force-publish --no-push"
+  },
+  "workspaces": [
+    "packages/*",
+    "demos/*"
+  ]
+}
