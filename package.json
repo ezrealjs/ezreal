@@ -3,7 +3,6 @@
   "private": true,
   "devDependencies": {},
   "scripts": {
-    "lerna:publish": "yarn lerna version --conventional-commits  --conventional-prerelease --force-publish=*  --yes --push && yarn lerna publish --canary --yes --push",
     "build": "lerna run build",
     "postinstall": "lerna bootstrap",
     "version:prerelease": "lerna version --conventional-commits --conventional-prerelease --yes --force-publish --no-push",
