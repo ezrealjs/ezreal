@@ -48,11 +48,12 @@ export default function bootstrap(params?: IEzrealCreateParams): IEzreal {
 
   return {
     webpack: () => {
-      return compose([precursors, ...middlewares, terminator])(
+      const [chain] = compose([precursors, ...middlewares, terminator])(
         // @ts-ignore
         undefined,
         options
-      )[0].toConfig();
+      );
+      return chain.toConfig();
     },
     options: () => options,
   };

@@ -5,7 +5,7 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">To better help you build webpackConfig.</p>
+  <p align="center">Chain building your complex webpackConfig.</p>
     <p align="center">
 <a href="https://www.npmjs.com/~ezreal-core" target="_blank"><img src="https://img.shields.io/npm/v/ezreal-core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~ezreal-core" target="_blank"><img src="https://img.shields.io/npm/l/ezreal-core.svg" alt="Package License" /></a>
@@ -14,48 +14,42 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Introduction
 
 Ezreal combines some middleware with a preset to build your webpackConfig. Why not use [neutrinoJs](https://neutrinojs.org/) ？For more details, you can read this [pr](https://github.com/neutrinojs/neutrino/pull/1653).
 
 So ezreal can do even better in the following areas
 1. ***Single responsibility principle***: a middleware does only one thing
 2. ***Preset support***: the preset concept makes it easy to publish to npm to share your configuration
-3. ***No side effects***: the code implementation makes it more side-effect-free and pure
-4. ***Hot plugging and unplugging***: quickly add a feature and uninstall a feature without any burden
+3. ***Pipeline build***: instead of nested call, flat call middleware one by one
+4. ***No side effects***: the code implementation makes it more side-effect-free and pure
 
 Nowadays, many excellent packages are facing this problem, with more and more features, each new optional feature requires multiple webpack configuration changes, and the code has to add if elese conditional judgments, the complexity of the code will grow exponentially. And when a feature is deprecated, you forget which files to restore
 
 ## Getting started
 ```
-yarn add ezreal-core ezreal-preset-react
+yarn add ezreal-core
 ```
-
-### A command line tool
-easy combination to generate the desired configuration
 ```
 const bootstrap = require("ezreal-core");
-const webpackConfig = bootstrap({
-   extends: require.resolve('my-company-web')
-}).webpack();
 
-// my-company-web is an npm package or a file
-module.exports = {
-	extends: require.resolve('ezreal-preset-react'),
+const webpackConfig = bootstrap({
+	// my-preset-react is an npm package or a file
+	extends: require.resolve('my-preset-react'),
     middleware: [
-    	require.resolve('my-company-prerender'),
-        require.resolve('my-company-microFrontEnd'),
-        require.resolve('my-company-packageCheck'),
-        require.resolve('my-company-esCheck'),
-        require.resolve('my-company-sentry'),
+    	require.resolve('my-middleware-prerender'),
+        require.resolve('my-middleware-microFrontEnd'),
+        require.resolve('my-middleware-packageCheck'),
+        require.resolve('my-middleware-esCheck'),
+        require.resolve('my-middleware-sentry'),
         ...
     ]
-}
+}).webpack();
 ```
 
-
+## Examples
 ### A simple web project
-can provide you with webpackConfig
+Can provide you with webpackConfig
 ```
 // examples/simple/webpack.config.js
 
@@ -71,25 +65,50 @@ const bootstrap = require("ezreal-core");
 module.exports = bootstrap().webpack();
 ```
 
-### For use by teams in different departments of the company
+### A command line tool
+Provide different user configurations for command line tools
 ```
-// Dynamically get the configuration of the current user
+// my-cli.js
 const bootstrap = require("ezreal-core");
 const webpackConfig = bootstrap().webpack();
+```
+Better support for different types of projects
 
-// The configuration file for team a
+```
+// project-a
 // .ezrealrc.js
 module.exports = {
-   extends: "preset-team-a"
+   extends: "my-preset-mobile" // extends: my-preset-react
 }
 
-// The configuration file for team b
+// project-b
 // .ezrealrc.js
 module.exports = {
-   extends: "preset-team-b"
+   extends: "my-preset-pc" // extends: my-preset-react
+}
+```
+
+## Advanced
+### middleware
+```
+modules.exports = function MyAnalyzerMiddleware(chain, options) {
+	if (options.analyze) {
+      chain
+          .plugin('webpack-bundle-analyzer')
+          .use(new BundleAnalyzerPlugin(options.analyze));
+    }
+}
+```
+### preset
+```
+modules.exports = {
+  extends: require.resolve('ezreal-preset-react'),
+  middleware: [require.resolve('./my-analyzer-middleware')],
+  // Set a default value, with a lower priority than the user's configuration
+  analyze: true
 }
 ```
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+[MIT licensed](LICENSE).

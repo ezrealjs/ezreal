@@ -73,7 +73,9 @@
     "neutrino",
     "chain",
     "react-scripts",
-    "vue-cli"
+    "vue-cli",
+    "webpack config",
+    "config"
   ],
   "description": "To better help you build webpackConfig"
 }
