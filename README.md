@@ -34,15 +34,15 @@ yarn add ezreal-core
 const bootstrap = require("ezreal-core");
 
 const webpackConfig = bootstrap({
-	// my-preset-react is an npm package or a file
+  // my-preset-react is an npm package or a file
   extends: require.resolve('my-preset-react'),
   middleware: [
-        require.resolve('my-middleware-prerender'),
-        require.resolve('my-middleware-microFrontEnd'),
-        require.resolve('my-middleware-packageCheck'),
-        require.resolve('my-middleware-esCheck'),
-        require.resolve('my-middleware-sentry'),
-        ...
+    require.resolve('my-middleware-prerender'),
+    require.resolve('my-middleware-microFrontEnd'),
+    require.resolve('my-middleware-packageCheck'),
+    require.resolve('my-middleware-esCheck'),
+    require.resolve('my-middleware-sentry'),
+    ...
   ]
 }).webpack();
 ```
@@ -92,11 +92,11 @@ module.exports = {
 ### middleware
 ```
 modules.exports = function MyAnalyzerMiddleware(chain, options) {
-	if (options.analyze) {
-      chain
-          .plugin('webpack-bundle-analyzer')
-          .use(new BundleAnalyzerPlugin(options.analyze));
-    }
+  if (options.analyze) {
+    chain
+      .plugin('webpack-bundle-analyzer')
+      .use(new BundleAnalyzerPlugin(options.analyze));
+  }
 }
 ```
 ### preset
