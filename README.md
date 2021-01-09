@@ -24,8 +24,7 @@ So ezreal can do even better in the following areas
 3. ***Pipeline build***: instead of nested call, flat call middleware one by one
 4. ***No side effects***: the code implementation makes it more side-effect-free and pure
 
-Nowadays, many excellent packages are facing this problem, with more and more features, each new optional feature requires multiple webpack configuration changes, and the code has to add if elese conditional judgments, the complexity of the code will grow exponentially. And when a feature is deprecated, you forget which files to restore
-
+[Read more](https://github.com/ezrealjs/ezreal/blob/master/ABOUT.md)
 ## Getting started
 ```
 yarn add ezreal-core
@@ -52,14 +51,12 @@ const webpackConfig = bootstrap({
 Can provide you with webpackConfig
 ```
 // examples/simple/webpack.config.js
-
 const bootstrap = require("ezreal-core");
 
 // If there is no .ezrealrc.js
 // Can be called directly from a pure function
 // bootstrap({
-//   extends: "ezreal-preset-react",
-//   appHtml: "index.html",
+//   extends: "ezreal-preset-react"
 // }).webpack();
 
 module.exports = bootstrap().webpack();
@@ -87,6 +84,9 @@ module.exports = {
    extends: "my-preset-pc" // extends: my-preset-react
 }
 ```
+
+## Features
+* ✨ ezreal-cli ? : Zero-configuration 📦 tool, easy support for react/vue/electron/component library/node library
 
 ## Advanced
 ### middleware
