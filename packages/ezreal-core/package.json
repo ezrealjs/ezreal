@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.3",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -36,7 +36,7 @@
     "typescript": "^4.1.2"
   },
   "dependencies": {
-    "ezreal-utils": "^1.0.1",
+    "ezreal-utils": "^1.0.3",
     "webpack-chain": "^6.5.1"
   },
   "gitHead": "5f83ac363b23bfd650a853411c5fc76ab7f07780",
