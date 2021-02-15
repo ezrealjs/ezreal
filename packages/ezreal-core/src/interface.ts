@@ -2,7 +2,7 @@ import Chain from 'webpack-chain';
 
 export type IEzrealCreateParams = string | IEzrealBaseOptions;
 
-export type IEzrealMiddlewareOptions = Record<string, any>
+export type IEzrealMiddlewareOptions = Record<string, any>;
 
 export type IEzrealMiddleware = (
   chain: Chain,
@@ -16,4 +16,7 @@ export type IUserEzrealMiddleware = (
 export interface IEzrealBaseOptions {
   extends?: string | null;
   middleware?: IUserEzrealMiddleware | IUserEzrealMiddleware[];
+  options?:
+    | ((opt?: IEzrealMiddlewareOptions) => IEzrealMiddlewareOptions)
+    | IEzrealMiddlewareOptions;
 }

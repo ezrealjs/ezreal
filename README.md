@@ -85,9 +85,6 @@ module.exports = {
 }
 ```
 
-## Features
-* ✨ ezreal-cli ? : Zero-configuration 📦 tool, easy support for react/vue/electron/component library/node library
-
 ## Advanced
 ### middleware
 ```
@@ -105,7 +102,9 @@ modules.exports = {
   extends: require.resolve('ezreal-preset-react'),
   middleware: [require.resolve('./my-analyzer-middleware')],
   // Set a default value, with a lower priority than the user's configuration
-  analyze: true
+  options: {
+    analyze: true
+  }
 }
 ```
 

@@ -5,7 +5,7 @@ export default {
 
   middleware: [require.resolve('./middleware')],
 
-  ...defaultOptions,
+  options: defaultOptions,
 };
 
 export * from './default-options'

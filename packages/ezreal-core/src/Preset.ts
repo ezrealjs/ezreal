@@ -16,7 +16,7 @@ export interface IPresetOptions {
   path: string;
   extends: Preset | null;
   middlewares: IEzrealMiddleware[];
-  options: Record<string, any>;
+  options: IEzrealBaseOptions['options'];
 }
 
 export default class Preset {
@@ -70,7 +70,7 @@ export default class Preset {
       Preset.defaultOptions,
       config
     );
-    const { extends: parent, middleware, ...restOptions } = instanceLike;
+    const { extends: parent, middleware, options } = instanceLike;
     const middlewares: IEzrealMiddleware[] = (Array.isArray(middleware)
       ? middleware
       : [middleware]
@@ -80,7 +80,7 @@ export default class Preset {
       path: filePath,
       extends: parent === null ? parent : Preset.create(parent),
       middlewares,
-      options: restOptions,
+      options,
     });
 
     return presetInstance;
@@ -112,16 +112,25 @@ export default class Preset {
       .concat(preset.middlewares);
   }
 
-  static getOptions(preset: Preset): IEzrealBaseOptions {
+  static getOptions(preset: Preset): IEzrealMiddlewareOptions {
+    let presetOptions = preset.options || {};
+
     if (preset.extends === null) {
-      return preset.options;
+      return typeof presetOptions === 'function'
+        ? (presetOptions({}) as IEzrealBaseOptions)
+        : presetOptions;
     }
-    return Object.assign({}, Preset.getOptions(preset.extends), preset.options);
+    return typeof presetOptions === 'function'
+      ? (presetOptions(
+          Object.assign({}, Preset.getOptions(preset.extends))
+        ) as IEzrealBaseOptions)
+      : Object.assign({}, Preset.getOptions(preset.extends), presetOptions);
   }
 
   static defaultOptions: Required<IEzrealBaseOptions> = {
     extends: null,
     middleware: [],
+    options: {},
   };
 
   static loadCacheMap: Map<IEzrealCreateParams, Preset> = new Map();

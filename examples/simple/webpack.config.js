@@ -4,7 +4,13 @@ const bootstrap = require("ezreal-core");
 // Can be called directly from a pure function
 // bootstrap({
 //   extends: "ezreal-preset-react",
-//   appHtml: "index.html",
+//   options: {
+//    appHtml: 'index.html'
+//   }
 // }).webpack();
 
 module.exports = bootstrap().webpack();
+
+console.log('WebpackConfig: ', module.exports)
+
+console.log('Server running at http://localhost:8080/')
